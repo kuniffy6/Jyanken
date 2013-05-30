@@ -20,7 +20,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSLog(@"%d%d%d",[defaults integerForKey:@"WIN_COUNT"],[defaults integerForKey:@"LOSE_COUNT"],[defaults integerForKey:@"DRAW_COUNT"]);
+//    NSLog(@"%d%d%d",[defaults integerForKey:@"WIN_COUNT"],[defaults integerForKey:@"LOSE_COUNT"],[defaults integerForKey:@"DRAW_COUNT"]);
     if ([defaults integerForKey:@"WIN_COUNT"]+[defaults integerForKey:@"LOSE_COUNT"]+[defaults integerForKey:@"DRAW_COUNT"]==0 ) {
         self.continueBtn.hidden = YES;
         self.continueBtn.enabled = NO;
