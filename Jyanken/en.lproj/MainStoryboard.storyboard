@@ -14,7 +14,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cfm-KR-eoD">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="はじめる">
+                                <state key="normal" title="はじめから">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -22,16 +22,34 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ys2-Ip-v9E" kind="modal" modalTransitionStyle="crossDissolve" id="y7E-wK-31j"/>
+                                    <segue destination="ys2-Ip-v9E" kind="modal" identifier="resetSeque" id="B3y-YI-PJl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xsR-FU-gvH">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="つづきから">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ys2-Ip-v9E" kind="modal" identifier="continueSeque" id="ZRK-hx-nfX"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Cfm-KR-eoD" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="2tc-nV-fDB"/>
-                            <constraint firstItem="Cfm-KR-eoD" firstAttribute="top" secondItem="3" secondAttribute="top" constant="252" id="L0c-qE-fBS"/>
+                            <constraint firstItem="Cfm-KR-eoD" firstAttribute="top" secondItem="xsR-FU-gvH" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="KpU-oS-IV1"/>
+                            <constraint firstItem="xsR-FU-gvH" firstAttribute="top" secondItem="3" secondAttribute="top" constant="227" id="ZkX-yq-iWE"/>
+                            <constraint firstItem="xsR-FU-gvH" firstAttribute="centerX" secondItem="Cfm-KR-eoD" secondAttribute="centerX" type="user" id="ipc-dx-Op2"/>
+                            <constraint firstItem="xsR-FU-gvH" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="oju-wp-G50"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="continueBtn" destination="xsR-FU-gvH" id="vIu-59-KHW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
@@ -95,6 +113,19 @@
                                     <segue destination="iRH-Vy-jHP" kind="modal" modalTransitionStyle="flipHorizontal" id="aSS-kf-Uad"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SzQ-hw-neE">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="もどる">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="2" kind="modal" id="kfs-wc-6zI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -105,7 +136,9 @@
                             <constraint firstItem="mX8-9g-4v6" firstAttribute="leading" secondItem="g6g-A2-K87" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="ONk-Og-AcK"/>
                             <constraint firstItem="g6g-A2-K87" firstAttribute="leading" secondItem="6Mu-ki-Dal" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="V9Z-cx-Xaj"/>
                             <constraint firstItem="mX8-9g-4v6" firstAttribute="baseline" secondItem="g6g-A2-K87" secondAttribute="baseline" type="default" id="WjL-Ij-RDj"/>
+                            <constraint firstAttribute="bottom" secondItem="SzQ-hw-neE" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="eZa-ZL-xKu"/>
                             <constraint firstItem="6Mu-ki-Dal" firstAttribute="top" secondItem="pPk-Jt-P4G" secondAttribute="top" constant="252" id="hlv-t0-6ty"/>
+                            <constraint firstItem="SzQ-hw-neE" firstAttribute="centerX" secondItem="g6g-A2-K87" secondAttribute="centerX" type="default" id="yry-Z3-eUD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Vo3-uR-xJV"/>
@@ -160,6 +193,11 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0勝 0敗 0引き分け" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbj-rY-xXo">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -170,16 +208,19 @@
                             <constraint firstItem="LOM-Xj-Duh" firstAttribute="top" secondItem="sZ7-vW-EDx" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="NyH-PE-MW0"/>
                             <constraint firstItem="Xys-cU-KGn" firstAttribute="top" secondItem="VnZ-Zd-Wyt" secondAttribute="top" constant="20" symbolic="YES" type="default" id="QcN-9q-PRl"/>
                             <constraint firstItem="LOM-Xj-Duh" firstAttribute="leading" secondItem="5Vl-Di-Xmn" secondAttribute="leading" type="default" id="Uy2-5q-s4I"/>
+                            <constraint firstItem="jbj-rY-xXo" firstAttribute="centerX" secondItem="Xys-cU-KGn" secondAttribute="centerX" type="default" id="Xvl-Di-WYF"/>
+                            <constraint firstItem="jbj-rY-xXo" firstAttribute="centerX" secondItem="OYY-N2-V2f" secondAttribute="centerX" type="default" id="bhR-OZ-Ugb"/>
                             <constraint firstItem="LOM-Xj-Duh" firstAttribute="leading" secondItem="sZ7-vW-EDx" secondAttribute="leading" type="default" id="dIY-mg-73k"/>
+                            <constraint firstItem="OYY-N2-V2f" firstAttribute="top" secondItem="jbj-rY-xXo" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="eZq-01-7LI"/>
                             <constraint firstItem="sZ7-vW-EDx" firstAttribute="top" secondItem="VnZ-Zd-Wyt" secondAttribute="top" constant="134" id="jbj-Nq-t2F"/>
                             <constraint firstItem="Yr0-Ek-di4" firstAttribute="top" secondItem="5Vl-Di-Xmn" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="n4X-4A-nCB"/>
-                            <constraint firstItem="OYY-N2-V2f" firstAttribute="centerX" secondItem="Xys-cU-KGn" secondAttribute="centerX" type="default" id="pDM-hy-7Fb"/>
                             <constraint firstItem="sZ7-vW-EDx" firstAttribute="leading" secondItem="VnZ-Zd-Wyt" secondAttribute="leading" constant="80" id="qXK-uf-kkW"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="kekkaLabel" destination="Xys-cU-KGn" id="Y53-O3-Tiu"/>
                         <outlet property="myHandLabel" destination="Yr0-Ek-di4" id="5C4-ed-84P"/>
+                        <outlet property="resultLabel" destination="jbj-rY-xXo" id="Olk-D2-a0k"/>
                         <outlet property="yourHandLabel" destination="LOM-Xj-Duh" id="pgb-6K-DSG"/>
                     </connections>
                 </viewController>
@@ -194,6 +235,7 @@
             <relationships>
                 <relationship kind="outlet" name="kekkaLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="myHandLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="resultLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="yourHandLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
@@ -205,6 +247,9 @@
         </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="continueBtn" candidateClass="UIButton"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -213,7 +258,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="iKp-ya-8MH"/>
+        <segue reference="ZRK-hx-nfX"/>
         <segue reference="gsl-GD-8RA"/>
     </inferredMetricsTieBreakers>
 </document>

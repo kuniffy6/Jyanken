@@ -60,24 +60,39 @@
             self.yourHandLabel.text = @"ぐーちょきぱー";
             break;
     }
-    
+
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    int winCounter =[defaults integerForKey:@"WIN_COUNT"];
+    int drawCounter = [defaults integerForKey:@"DRAW_COUNT"];
+    int loseCounter = [defaults integerForKey:@"LOSE_COUNT"];
+
     int result = [JyankenModel doJyanken:self.myHand vs:yourHand];
     switch (result) {
         case RESULT_WIN:
             self.kekkaLabel.text = @"あなたさまのしょうりです";
+            winCounter ++;
             break;
         case RESULT_DRAW:
             self.kekkaLabel.text = @"ひきわけ";
+            drawCounter ++;
             break;
         case RESULT_LOSE:
             self.kekkaLabel.text = @"あなたのまけよ";
+            loseCounter ++;
             break;
         default:
             self.kekkaLabel.text = @"こんなことはあってはいけない";
             break;
     }
+    
+    self.resultLabel.text = [NSString stringWithFormat:@"%d勝 %d負 %d引き分け",winCounter,loseCounter,drawCounter];
 
+    [defaults setInteger:winCounter forKey:@"WIN_COUNT"];
+    [defaults setInteger:loseCounter forKey:@"LOSE_COUNT"];
+    [defaults setInteger:drawCounter forKey:@"DRAW_COUNT"];
+    [defaults synchronize];
 }
+
 
 - (void)didReceiveMemoryWarning
 {

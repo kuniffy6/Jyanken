@@ -14,4 +14,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *myHandLabel;
 @property (weak, nonatomic) IBOutlet UILabel *yourHandLabel;
 @property (weak, nonatomic) IBOutlet UILabel *kekkaLabel;
+@property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 @end
